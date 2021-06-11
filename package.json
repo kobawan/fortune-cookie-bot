@@ -14,7 +14,7 @@
     "start:prod": "node build/index.js",
     "prebuild": "cp src/fortunes.txt build/fortunes.txt",
     "build": "tsc",
-    "deploy": "yarn build && git push heroku master"
+    "deploy": "git push heroku main"
   },
   "dependencies": {
     "axios": "^0.21.1",
