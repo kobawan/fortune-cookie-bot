@@ -3,7 +3,6 @@ dotenv.config();
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs';
-import axios from 'axios';
 
 const PORT = process.env.PORT || 4000;
 const app = express();
@@ -19,10 +18,7 @@ const getFortune = () => {
 };
 
 app.post('/api/v1/fortune', (req, res) => {
-  const payload = req.body;
-
-  console.log(payload);
-  res.sendStatus(200);
+  res.status(200).json({ response_type: 'ephemeral', text: getFortune() });
 });
 
 app.listen(PORT, () => {
